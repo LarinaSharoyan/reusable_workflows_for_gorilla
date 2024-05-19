@@ -1,0 +1,15 @@
+name: chidem
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-push:
+    runs-on: ubuntu-latest
+    steps:
+        - name: build_run_test
+          uses: LarinaSharoyan/gorilla/.github/workflows/build_run_tests.yml@main
+
+        - name: build-push
+          uses: LarinaSharoyan/gorilla/.github/workflows/docker_build_push.yml@main
+  
